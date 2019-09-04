@@ -7,38 +7,11 @@
 //
 
 import UIKit
-import EnumeratedTable
 
 final class ViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 }
 
-
-// MARK: Enumerated
-extension ViewController {
-    enum Section: Int, SectionEnumeration {
-        case section1
-        case section2
-        
-        var RowsInSection: RowEnumerated.Type {
-            return Row.self
-        }
-    }
-    
-    enum Row: Int, RowEnumeration {
-        case row1
-        
-        var text: String? {
-            return "row1"
-        }
-    }
-}
 
 // MARK: Table View Data Source
 extension ViewController: UITableViewDataSource {
@@ -58,6 +31,7 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
+
 
 // MARK: Table View Delegate
 extension ViewController: UITableViewDelegate {
