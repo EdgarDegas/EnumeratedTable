@@ -11,6 +11,8 @@
 		B315D5ED231FEA92009EA653 /* EnumeratedTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D5EC231FEA92009EA653 /* EnumeratedTableTests.swift */; };
 		B315D5EF231FEA92009EA653 /* EnumeratedTable.h in Headers */ = {isa = PBXBuildFile; fileRef = B315D5E1231FEA91009EA653 /* EnumeratedTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B315D607231FEB14009EA653 /* Enumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D606231FEB14009EA653 /* Enumerated.swift */; };
+		B315D64A232002F6009EA653 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D649232002F6009EA653 /* Enumeration.swift */; };
+		B315D64C23200586009EA653 /* Enumerated+UITableViewCellPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D64B23200586009EA653 /* Enumerated+UITableViewCellPresets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		B315D5EC231FEA92009EA653 /* EnumeratedTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumeratedTableTests.swift; sourceTree = "<group>"; };
 		B315D5EE231FEA92009EA653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B315D606231FEB14009EA653 /* Enumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerated.swift; sourceTree = "<group>"; };
+		B315D649232002F6009EA653 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		B315D64B23200586009EA653 /* Enumerated+UITableViewCellPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enumerated+UITableViewCellPresets.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				B315D606231FEB14009EA653 /* Enumerated.swift */,
+				B315D64B23200586009EA653 /* Enumerated+UITableViewCellPresets.swift */,
+				B315D649232002F6009EA653 /* Enumeration.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -207,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B315D607231FEB14009EA653 /* Enumerated.swift in Sources */,
+				B315D64A232002F6009EA653 /* Enumeration.swift in Sources */,
+				B315D64C23200586009EA653 /* Enumerated+UITableViewCellPresets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
