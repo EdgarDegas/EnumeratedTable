@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V5X-wj-MzB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="V5X-wj-MzB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="HgT-Sv-Qke"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fzU-tr-Ppr"/>
@@ -30,8 +30,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="V5X-wj-MzB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7dd-5j-YCi"/>
-                            <constraint firstItem="V5X-wj-MzB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8O6-Oq-0a3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="V5X-wj-MzB" secondAttribute="bottom" id="VjQ-a8-uc9"/>
+                            <constraint firstItem="V5X-wj-MzB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8O6-Oq-0a3"/>
+                            <constraint firstAttribute="bottom" secondItem="V5X-wj-MzB" secondAttribute="bottom" id="VjQ-a8-uc9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V5X-wj-MzB" secondAttribute="trailing" id="YQC-TS-3j2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -16,12 +16,11 @@ final class ViewController: UIViewController {
 // MARK: Table View Data Source
 extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Section.cases.count
+        return numberOfEnumeratedSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = Section(index: section)!
-        return section.RowsInSection.cases.count
+        return numberOfEnumeratedRows(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

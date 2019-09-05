@@ -9,7 +9,7 @@
 import EnumeratedTable
 
 // MARK: Enumerated
-extension ViewController {
+extension ViewController: TableEnumerated {
     enum Section: Int, SectionEnumeration {
         case section1
         case section2
