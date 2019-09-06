@@ -169,6 +169,9 @@ But since enumerations are `enum` (of course), you can provide whatever value yo
 
 #### 1. Provide headline, subhead:
 ```swift
+extension ViewController: TableEnumerated {
+    // ...
+    
     enum RichTextRow: Int, RowEnumeration {
         case row1
         case row2
@@ -200,6 +203,9 @@ But since enumerations are `enum` (of course), you can provide whatever value yo
             }
         }
     }
+        
+    // ...
+}
 ```
 
 #### 2. Conform your custom cells to Enumerable:
@@ -228,6 +234,9 @@ extension AvatarTableViewCell: Enumerable {
 #### 1. Implement the `handleSelection` method in your row enumeration:
 
 ```swift
+extension ViewController: TableEnumerated {
+    // ...
+    
     enum SelectableRow: Int, RowEnumeration {
         case about
         case githubRepo
@@ -243,11 +252,20 @@ extension AvatarTableViewCell: Enumerable {
             }
         }
     }
+    
+    // ...
+}
 ```
 
 #### 2. Call the shortcut method in your controller's delegate implementation:
 ```swift
+extension ViewController: UITableViewDelegate {
+    // ...
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         handleSelection(at: indexPath, by: self)
     }
+    
+    // ...
+}
 ```
