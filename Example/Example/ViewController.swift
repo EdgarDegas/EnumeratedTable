@@ -25,14 +25,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let row = enumeratedRow(at: indexPath) else { return .init() }
-        guard let cell = dequeueEnumerableCell(
-            for: row, at: indexPath, inside: tableView)
-        else {
-            return .init()
-        }
-        row.configureEnumerableCell(cell)
-        return cell as! UITableViewCell
+        return enumeratedCell(at: indexPath, inside: tableView)
     }
 }
 

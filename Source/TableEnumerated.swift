@@ -27,11 +27,18 @@ public protocol TableEnumerated {
     
     func enumeratedRow(at indexPath: IndexPath) -> RowEnumerated?
     
+    @available(*, deprecated,
+        message: "Deprecated in 0.0.4. Replace with enumeratedCell(at:inside:) -> UITableViewCell.")
     func dequeueEnumerableCell(
         for row: RowEnumerated,
         at indexPath: IndexPath,
         inside tableView: UITableView
     ) -> Enumerable?
+    
+    func enumeratedCell(
+        at indexPath: IndexPath,
+        inside tableView: UITableView
+    ) -> UITableViewCell
 }
 
 public extension TableEnumerated {
@@ -66,5 +73,20 @@ public extension TableEnumerated {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: reuseIdentifier, for: indexPath)
         return cell as? Enumerable
+    }
+    
+    func enumeratedCell(
+        at indexPath: IndexPath,
+        inside tableView: UITableView
+    ) -> UITableViewCell {
+        guard let row = enumeratedRow(at: indexPath),
+              let identifier = row.reuseIdentifier,
+              let enumrable = tableView.dequeueReusableCell(
+                  withIdentifier: identifier, for: indexPath) as? Enumerable
+        else {
+            return .init()
+        }
+        enumrable.configure(using: row)
+        return enumrable as! UITableViewCell
     }
 }
