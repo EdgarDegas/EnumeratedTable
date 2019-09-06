@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.platform     = :ios
-  spec.platform     = :ios, "12.0"
+  spec.platform     = :ios, "9.0"
 
   spec.swift_versions = ['5.0']
 
