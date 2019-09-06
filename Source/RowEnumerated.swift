@@ -18,6 +18,9 @@ public protocol RowEnumerated: Enumerated {
     var detail: String? { get }
     /// Describe how the cell should be configured.
     func configureEnumerableCell(_ cell: Enumerable)
+    /// Describe how the table should behave when cell is selected. Defaults to doing
+    /// nothing at all.
+    func handleSelection(by viewController: UIViewController)
 }
 
 public extension RowEnumerated {
@@ -28,5 +31,9 @@ public extension RowEnumerated {
     
     func configureEnumerableCell(_ cell: Enumerable) {
         cell.configure(using: self)
+    }
+    
+    func handleSelection(by viewController: UIViewController) {
+        
     }
 }
