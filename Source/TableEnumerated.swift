@@ -17,6 +17,7 @@ import Foundation
 /// project](https://github.com/EdgarDegas/EnumeratedTable/tree/master/Example) for
 /// paradigm.
 public protocol TableEnumerated {
+    
     /// The essential of a table. Enumerates all sections the table has.
     associatedtype Section: SectionEnumeration where Section: RawRepresentable, Section.RawValue == Int
     

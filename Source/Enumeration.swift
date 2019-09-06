@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// Use this protocol to enumerate rows in a section.
 ///
 /// Do declare your enumeration like this:

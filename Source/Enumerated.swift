@@ -10,6 +10,7 @@ import Foundation
 
 /// The base protocol of RowEnumerated and SectionEnumerated.
 public protocol Enumerated {
+    
     /// Same as `allCases`.
     static var cases: [Enumerated] { get }
     
