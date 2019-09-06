@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EnumeratedTable"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Elegant way to layout a table with Swift enum."
 
   # This description is used to generate tags and improve search results.
