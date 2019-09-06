@@ -9,7 +9,7 @@
 import EnumeratedTable
 import SafariServices
 
-// MARK: - Enumerations
+// MARK: Enumerations
 extension ViewController: TableEnumerated {
     
     enum Section: Int, SectionEnumeration {

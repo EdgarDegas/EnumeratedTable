@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EnumeratedTable
 
 final class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
