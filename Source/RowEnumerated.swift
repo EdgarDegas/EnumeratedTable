@@ -23,7 +23,8 @@ public protocol RowEnumerated: Enumerated {
     /// The height of the row, or nil to auto layout the cell.
     var height: CGFloat? { get }
     
-    /// Describe how the cell should be configured.
+    @available(*, deprecated,
+    message: "Deprecated in 0.0.4. Cells should be configured by Enumerable.")
     func configureEnumerableCell(_ cell: Enumerable)
     
     /// Describe how the table should behave when cell is selected. Defaults to doing
