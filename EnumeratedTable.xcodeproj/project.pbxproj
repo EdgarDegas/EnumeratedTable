@@ -12,10 +12,12 @@
 		B315D5EF231FEA92009EA653 /* EnumeratedTable.h in Headers */ = {isa = PBXBuildFile; fileRef = B315D5E1231FEA91009EA653 /* EnumeratedTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B315D607231FEB14009EA653 /* Enumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D606231FEB14009EA653 /* Enumerated.swift */; };
 		B315D64A232002F6009EA653 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D649232002F6009EA653 /* Enumeration.swift */; };
-		B315D64C23200586009EA653 /* Enumerated+UITableViewCellPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D64B23200586009EA653 /* Enumerated+UITableViewCellPresets.swift */; };
 		B315D650232006E9009EA653 /* UITableViewCell+Enumerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D64F232006E9009EA653 /* UITableViewCell+Enumerable.swift */; };
 		B315D65323200830009EA653 /* Enumerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D65223200830009EA653 /* Enumerable.swift */; };
 		B315D6552320A560009EA653 /* TableEnumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D6542320A560009EA653 /* TableEnumerated.swift */; };
+		B32BFCA723224CAA00A2143F /* RowEnumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BFCA623224CAA00A2143F /* RowEnumerated.swift */; };
+		B32BFCA923224CC600A2143F /* SectionEnumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BFCA823224CC600A2143F /* SectionEnumerated.swift */; };
+		B337903E23224537007ADA8B /* EnumerableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337903D23224537007ADA8B /* EnumerableTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +39,12 @@
 		B315D5EE231FEA92009EA653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B315D606231FEB14009EA653 /* Enumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerated.swift; sourceTree = "<group>"; };
 		B315D649232002F6009EA653 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
-		B315D64B23200586009EA653 /* Enumerated+UITableViewCellPresets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enumerated+UITableViewCellPresets.swift"; sourceTree = "<group>"; };
 		B315D64F232006E9009EA653 /* UITableViewCell+Enumerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Enumerable.swift"; sourceTree = "<group>"; };
 		B315D65223200830009EA653 /* Enumerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerable.swift; sourceTree = "<group>"; };
 		B315D6542320A560009EA653 /* TableEnumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEnumerated.swift; sourceTree = "<group>"; };
+		B32BFCA623224CAA00A2143F /* RowEnumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowEnumerated.swift; sourceTree = "<group>"; };
+		B32BFCA823224CC600A2143F /* SectionEnumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnumerated.swift; sourceTree = "<group>"; };
+		B337903D23224537007ADA8B /* EnumerableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerableTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				B315D606231FEB14009EA653 /* Enumerated.swift */,
-				B315D64B23200586009EA653 /* Enumerated+UITableViewCellPresets.swift */,
+				B32BFCA623224CAA00A2143F /* RowEnumerated.swift */,
+				B32BFCA823224CC600A2143F /* SectionEnumerated.swift */,
 				B315D649232002F6009EA653 /* Enumeration.swift */,
 				B315D6542320A560009EA653 /* TableEnumerated.swift */,
 				B315D651232006ED009EA653 /* Enumerable */,
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B315D65223200830009EA653 /* Enumerable.swift */,
+				B337903D23224537007ADA8B /* EnumerableTableViewCell.swift */,
 				B315D64F232006E9009EA653 /* UITableViewCell+Enumerable.swift */,
 			);
 			path = Enumerable;
@@ -229,11 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B32BFCA723224CAA00A2143F /* RowEnumerated.swift in Sources */,
 				B315D6552320A560009EA653 /* TableEnumerated.swift in Sources */,
 				B315D607231FEB14009EA653 /* Enumerated.swift in Sources */,
 				B315D64A232002F6009EA653 /* Enumeration.swift in Sources */,
+				B337903E23224537007ADA8B /* EnumerableTableViewCell.swift in Sources */,
 				B315D650232006E9009EA653 /* UITableViewCell+Enumerable.swift in Sources */,
-				B315D64C23200586009EA653 /* Enumerated+UITableViewCellPresets.swift in Sources */,
+				B32BFCA923224CC600A2143F /* SectionEnumerated.swift in Sources */,
 				B315D65323200830009EA653 /* Enumerable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

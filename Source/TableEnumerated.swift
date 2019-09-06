@@ -8,14 +8,22 @@
 
 import Foundation
 
+/// Conform your controller or view model to enumerate your table view.
+///
+/// This protocol asks you to provide a SectionEnumeration type, which should be
+/// declared as an enum, named `Section`. See `SectionEnumeration` for paradigm.
+///
+/// The protocol provides several convenience methods. Checkout [the example
+/// project](https://github.com/EdgarDegas/EnumeratedTable/tree/master/Example) for
+/// paradigm.
 public protocol TableEnumerated {
     associatedtype Section: SectionEnumeration where Section: RawRepresentable, Section.RawValue == Int
-    
-    var tableView: UITableView! { get }
     
     var numberOfEnumeratedSections: Int { get }
     
     func numberOfEnumeratedRows(in section: Int) -> Int
+    
+    func enumeratedSection(at section: Int) -> SectionEnumerated?
     
     func enumeratedRow(at indexPath: IndexPath) -> RowEnumerated?
     
@@ -35,6 +43,10 @@ public extension TableEnumerated {
         guard let section = Section(index: section) else { return 0 }
         let Row = section.RowsInSection
         return Row.cases.count
+    }
+    
+    func enumeratedSection(at section: Int) -> SectionEnumerated? {
+        return Section(index: section)
     }
     
     func enumeratedRow(at indexPath: IndexPath) -> RowEnumerated? {

@@ -8,8 +8,23 @@
 
 import Foundation
 
-public protocol Enumeration: Enumerated, CaseIterable { }
 
+/// Use this protocol to enumerate rows in a section.
+///
+/// Do declare your enumeration like this:
+/// ```swift
+/// enum SettingRow: Int, RowEnumeration {
+///     // ...
+/// }
+/// ```
 public protocol RowEnumeration: RowEnumerated, CaseIterable { }
 
+/// Use this protocol to enumerate sections in a table.
+///
+/// Do declare your enumeration like this:
+/// ```swift
+/// enum Section: Int, SectionEnumeration {
+///     // ...
+/// }
+/// ```
 public protocol SectionEnumeration: SectionEnumerated, CaseIterable { }

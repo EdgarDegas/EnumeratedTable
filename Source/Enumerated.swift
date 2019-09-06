@@ -8,30 +8,15 @@
 
 import Foundation
 
+/// The base protocol of RowEnumerated and SectionEnumerated.
 public protocol Enumerated {
     /// Same as `allCases`.
     static var cases: [Enumerated] { get }
     
-    /// Text in `textLabel` of a row or title of a section.
-    var text: String? { get }
-
+    /// Initialize a case with the index of its corresponding section or cell.
+    ///
     /// Same as `init?(rawValue: Int)`.
     init?(index: Int)
-}
-
-public protocol RowEnumerated: Enumerated {
-    /// The reuse identifier
-    var reuseIdentifier: String? { get }
-    
-    /// Text in `detailLabel` of a row.
-    var detail: String? { get }
-    
-    func configureEnumerableCell(_ cell: Enumerable)
-}
-
-public protocol SectionEnumerated: Enumerated {
-    /// The enumerated rows of the section.
-    var RowsInSection: RowEnumerated.Type { get }
 }
 
 public extension Enumerated where Self: CaseIterable {
@@ -46,11 +31,5 @@ public extension Enumerated where Self: RawRepresentable, Self.RawValue == Int {
             return nil
         }
         self = `case`
-    }
-}
-
-public extension RowEnumerated {
-    func configureEnumerableCell(_ cell: Enumerable) {
-        cell.configure(using: self)
     }
 }

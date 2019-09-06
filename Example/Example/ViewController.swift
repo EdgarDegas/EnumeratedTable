@@ -39,5 +39,7 @@ extension ViewController: UITableViewDataSource {
 
 // MARK: Table View Delegate
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return enumeratedSection(at: section)?.titleForHeader
+    }
 }

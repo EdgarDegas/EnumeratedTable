@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="z8H-32-o3W" detailTextLabel="ij4-oc-26y" style="IBUITableViewCellStyleValue1" id="lOQ-SD-996" customClass="TableViewCell" customModule="Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="z8H-32-o3W" detailTextLabel="ij4-oc-26y" style="IBUITableViewCellStyleValue1" id="lOQ-SD-996" customClass="EnumerableTableViewCell" customModule="EnumeratedTable">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lOQ-SD-996" id="GLp-Fk-Unr">
@@ -89,6 +89,52 @@
                                             <outlet property="bodyLabel" destination="0nV-08-fme" id="noL-Vt-KII"/>
                                             <outlet property="headlineLabel" destination="bbn-gA-x4h" id="jgP-tA-hmG"/>
                                             <outlet property="subheadLabel" destination="2Wo-r6-9n6" id="UnU-NY-Vzf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Avatar Cell" rowHeight="75" id="mCg-zg-xT7" customClass="AvatarTableViewCell" customModule="Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="214.5" width="414" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mCg-zg-xT7" id="0iv-60-EHY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView verifyAmbiguity="off" opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ntw-7P-p21">
+                                                    <rect key="frame" x="20" y="16" width="374" height="42.5"/>
+                                                    <subviews>
+                                                        <imageView verifyAmbiguity="off" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="42" placeholderIntrinsicHeight="42" translatesAutoresizingMaskIntoConstraints="NO" id="IbV-M9-Gt1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="42.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="42" id="g1q-F1-98c"/>
+                                                                <constraint firstAttribute="width" constant="42" id="k7I-JZ-RSC"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="21"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XY-PY-BiD">
+                                                            <rect key="frame" x="54" y="0.0" width="320" height="42.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="IbV-M9-Gt1" firstAttribute="height" secondItem="ntw-7P-p21" secondAttribute="height" id="foe-N0-M8B"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ntw-7P-p21" firstAttribute="top" secondItem="0iv-60-EHY" secondAttribute="top" constant="16" id="5uf-5C-93H"/>
+                                                <constraint firstAttribute="trailing" secondItem="ntw-7P-p21" secondAttribute="trailing" constant="20" id="G2J-9Y-keA"/>
+                                                <constraint firstItem="ntw-7P-p21" firstAttribute="leading" secondItem="0iv-60-EHY" secondAttribute="leading" constant="20" id="KBf-OS-6vH"/>
+                                                <constraint firstAttribute="bottom" secondItem="ntw-7P-p21" secondAttribute="bottom" constant="16" id="dTU-yE-A4k"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="IbV-M9-Gt1" id="ud7-AK-Wyp"/>
+                                            <outlet property="nameLabel" destination="0XY-PY-BiD" id="Glx-wb-lJw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
