@@ -16,6 +16,14 @@ public protocol TableEnumerated {
     var numberOfEnumeratedSections: Int { get }
     
     func numberOfEnumeratedRows(in section: Int) -> Int
+    
+    func enumeratedRow(at indexPath: IndexPath) -> RowEnumerated?
+    
+    func dequeueEnumerableCell(
+        for row: RowEnumerated,
+        at indexPath: IndexPath,
+        inside tableView: UITableView
+    ) -> Enumerable?
 }
 
 public extension TableEnumerated {
@@ -24,8 +32,27 @@ public extension TableEnumerated {
     }
     
     func numberOfEnumeratedRows(in section: Int) -> Int {
-        guard let section = Section.init(index: section) else { return 0 }
+        guard let section = Section(index: section) else { return 0 }
         let Row = section.RowsInSection
         return Row.cases.count
+    }
+    
+    func enumeratedRow(at indexPath: IndexPath) -> RowEnumerated? {
+        guard let section = Section(index: indexPath.section) else { return nil }
+        let Row = section.RowsInSection
+        let rows = Row.cases
+        guard indexPath.row >= 0 && indexPath.row < rows.count else { return nil }
+        return rows[indexPath.row] as? RowEnumerated
+    }
+    
+    func dequeueEnumerableCell(
+        for row: RowEnumerated,
+        at indexPath: IndexPath,
+        inside tableView: UITableView
+    ) -> Enumerable? {
+        guard let reuseIdentifier = row.reuseIdentifier else { return nil }
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: reuseIdentifier, for: indexPath)
+        return cell as? Enumerable
     }
 }

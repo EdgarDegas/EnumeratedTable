@@ -14,6 +14,8 @@
 		B315D63F231FF53D009EA653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B315D63D231FF53D009EA653 /* LaunchScreen.storyboard */; };
 		B315D648231FF552009EA653 /* EnumeratedTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B315D647231FF552009EA653 /* EnumeratedTable.framework */; };
 		B315D64E2320067C009EA653 /* ViewController+EnumeratedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D64D2320067C009EA653 /* ViewController+EnumeratedTable.swift */; };
+		B33790382321F86F007ADA8B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33790372321F86F007ADA8B /* TableViewCell.swift */; };
+		B337903C2321FF40007ADA8B /* RichTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337903B2321FF40007ADA8B /* RichTextTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B315D640231FF53D009EA653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B315D647231FF552009EA653 /* EnumeratedTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EnumeratedTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315D64D2320067C009EA653 /* ViewController+EnumeratedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+EnumeratedTable.swift"; sourceTree = "<group>"; };
+		B33790372321F86F007ADA8B /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		B337903B2321FF40007ADA8B /* RichTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				B315D634231FF53C009EA653 /* AppDelegate.swift */,
 				B315D636231FF53C009EA653 /* ViewController.swift */,
 				B315D64D2320067C009EA653 /* ViewController+EnumeratedTable.swift */,
+				B33790372321F86F007ADA8B /* TableViewCell.swift */,
+				B337903B2321FF40007ADA8B /* RichTextTableViewCell.swift */,
 				B315D638231FF53C009EA653 /* Main.storyboard */,
 				B315D63B231FF53D009EA653 /* Assets.xcassets */,
 				B315D63D231FF53D009EA653 /* LaunchScreen.storyboard */,
@@ -150,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B337903C2321FF40007ADA8B /* RichTextTableViewCell.swift in Sources */,
 				B315D637231FF53C009EA653 /* ViewController.swift in Sources */,
+				B33790382321F86F007ADA8B /* TableViewCell.swift in Sources */,
 				B315D64E2320067C009EA653 /* ViewController+EnumeratedTable.swift in Sources */,
 				B315D635231FF53C009EA653 /* AppDelegate.swift in Sources */,
 			);

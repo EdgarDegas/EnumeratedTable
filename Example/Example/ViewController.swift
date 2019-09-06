@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EnumeratedTable
 
 final class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -24,10 +25,14 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = Row(index: indexPath.row)!
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = row.text
-        return cell
+        guard let row = enumeratedRow(at: indexPath) else { return .init() }
+        guard let cell = dequeueEnumerableCell(
+            for: row, at: indexPath, inside: tableView)
+        else {
+            return .init()
+        }
+        row.configureEnumerableCell(cell)
+        return cell as! UITableViewCell
     }
 }
 

@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol Enumeration: RowEnumerated, CaseIterable { }
+public protocol Enumeration: Enumerated, CaseIterable { }
 
-public typealias RowEnumeration = Enumeration
+public protocol RowEnumeration: RowEnumerated, CaseIterable { }
 
-public protocol SectionEnumeration: Enumeration, SectionEnumerated { }
+public protocol SectionEnumeration: SectionEnumerated, CaseIterable { }

@@ -14,15 +14,20 @@ public protocol Enumerated {
     
     /// Text in `textLabel` of a row or title of a section.
     var text: String? { get }
-    
-    /// Text in `detailLabel` of a row.
-    var detail: String? { get }
-    
+
     /// Same as `init?(rawValue: Int)`.
     init?(index: Int)
 }
 
-public typealias RowEnumerated = Enumerated
+public protocol RowEnumerated: Enumerated {
+    /// The reuse identifier
+    var reuseIdentifier: String? { get }
+    
+    /// Text in `detailLabel` of a row.
+    var detail: String? { get }
+    
+    func configureEnumerableCell(_ cell: Enumerable)
+}
 
 public protocol SectionEnumerated: Enumerated {
     /// The enumerated rows of the section.
@@ -44,3 +49,8 @@ public extension Enumerated where Self: RawRepresentable, Self.RawValue == Int {
     }
 }
 
+public extension RowEnumerated {
+    func configureEnumerableCell(_ cell: Enumerable) {
+        cell.configure(using: self)
+    }
+}

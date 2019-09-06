@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol Enumerable {
+public protocol Enumerable {
+//    associatedtype Row: RowEnumerated
     func configure(using enumerated: RowEnumerated)
 }
