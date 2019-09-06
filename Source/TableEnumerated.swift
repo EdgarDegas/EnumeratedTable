@@ -59,6 +59,18 @@ public protocol TableEnumerated {
         at indexPath: IndexPath,
         inside tableView: UITableView
     ) -> UITableViewCell
+    
+    /// Call this method in `tableView(_:didSelectedRowAt:)`.
+    ///
+    /// This method invokes the code you provided at the `handleSelection` method in
+    /// your row enumeration.
+    ///
+    /// - Parameters:
+    ///     - indexPath: The index path of the cell.
+    ///     - viewController: The controller the enumerated row demands to handle the
+    ///     selection.
+    func handleSelection(at indexPath: IndexPath,
+                         by viewController: UIViewController)
 }
 
 public extension TableEnumerated {
@@ -108,5 +120,11 @@ public extension TableEnumerated {
         }
         enumrable.configure(using: row)
         return enumrable as! UITableViewCell
+    }
+    
+    func handleSelection(at indexPath: IndexPath,
+                         by viewController: UIViewController) {
+        guard let row = enumeratedRow(at: indexPath) else { return }
+        row.handleSelection(by: viewController)
     }
 }
