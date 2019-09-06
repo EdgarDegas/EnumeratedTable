@@ -17,14 +17,22 @@ import Foundation
 /// project](https://github.com/EdgarDegas/EnumeratedTable/tree/master/Example) for
 /// paradigm.
 public protocol TableEnumerated {
+    /// The essential of a table. Enumerates all sections the table has.
     associatedtype Section: SectionEnumeration where Section: RawRepresentable, Section.RawValue == Int
     
+    /// The number of sections enumerated in Section.
     var numberOfEnumeratedSections: Int { get }
     
+    /// Returns the number of rows enumerated in the section enumeration.
+    /// - Parameter section: Index of the section.
     func numberOfEnumeratedRows(in section: Int) -> Int
     
+    /// Returns the enumeration of the section.
+    /// - Parameter section: Index of the section.
     func enumeratedSection(at section: Int) -> SectionEnumerated?
     
+    /// Returns the enumeration of the row.
+    /// - Parameter indexPath: Index path of the row.
     func enumeratedRow(at indexPath: IndexPath) -> RowEnumerated?
     
     @available(*, deprecated,
@@ -35,6 +43,17 @@ public protocol TableEnumerated {
         inside tableView: UITableView
     ) -> Enumerable?
     
+    /// Returns the dequeued and configured reusable cell.
+    ///
+    /// This method dequeues the cell from the table view using the reusable identifier
+    /// your row enumeration provides.
+    ///
+    /// If the cell related to that reusable identifier conforms to Enumerable, then the
+    /// cell returned should already have been configured.
+    ///
+    /// - Parameters:
+    ///     - indexPath: The index path of the cell.
+    ///     - tableView: The table view where the cell resides.
     func enumeratedCell(
         at indexPath: IndexPath,
         inside tableView: UITableView
