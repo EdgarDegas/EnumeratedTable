@@ -11,23 +11,28 @@ import EnumeratedTable
 // MARK: Enumerated
 extension ViewController: TableEnumerated {
     enum Section: Int, SectionEnumeration {
-        case userSection
-        case settingSection
+        case user
+        case plain
+        case setting
         
         var RowsInSection: RowEnumerated.Type {
             switch self {
-            case .userSection:
+            case .user:
                 return UserRow.self
-            case .settingSection:
+            case .plain:
+                return SelectableRow.self
+            case .setting:
                 return RichTextRow.self
             }
         }
         
         var titleForHeader: String? {
             switch self {
-            case .userSection:
-                return "Plain Cells"
-            case .settingSection:
+            case .user:
+                return nil
+            case .plain:
+                return "Selectable Cells"
+            case .setting:
                 return "Rich Text Cells"
             }
         }
@@ -49,15 +54,37 @@ extension ViewController: TableEnumerated {
         var text: String? {
             switch self {
             case .avatar:
-                return "Name"
+                return "iMoe"
             case .biography:
-                return "row2"
+                return "A developer."
             }
         }
         
         var image: UIImage? {
             guard self == .avatar else { return nil }
             return UIImage(named: "Avatar")
+        }
+    }
+    
+    enum SelectableRow: Int, RowEnumeration {
+        case about
+        case githubRepo
+        
+        var reuseIdentifier: String? {
+            return "Cell"
+        }
+        
+        var text: String? {
+            switch self {
+            case .about:
+                return "About EnumeratedTable"
+            case .githubRepo:
+                return "GitHub Repository"
+            }
+        }
+        
+        var height: CGFloat? {
+            return 56
         }
     }
     

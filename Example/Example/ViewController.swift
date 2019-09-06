@@ -35,4 +35,8 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return enumeratedSection(at: section)?.titleForHeader
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return enumeratedRow(at: indexPath)?.height ?? UITableView.automaticDimension
+    }
 }
