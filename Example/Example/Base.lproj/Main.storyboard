@@ -47,8 +47,32 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Selectable Cell" textLabel="Q1A-5M-hB6" detailTextLabel="fa4-ZE-752" style="IBUITableViewCellStyleValue1" id="DMN-fe-1sO" customClass="EnumerableTableViewCell" customModule="EnumeratedTable">
+                                        <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DMN-fe-1sO" id="Lux-7Y-uKV">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q1A-5M-hB6">
+                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fa4-ZE-752">
+                                                    <rect key="frame" x="332" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Rich Cell" rowHeight="115" id="LVw-rP-X4N" customClass="RichTextTableViewCell" customModule="Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="414" height="115"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LVw-rP-X4N" id="Hz0-Iu-8N7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
@@ -92,7 +116,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Avatar Cell" rowHeight="75" id="mCg-zg-xT7" customClass="AvatarTableViewCell" customModule="Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="214.5" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="258.5" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mCg-zg-xT7" id="0iv-60-EHY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
@@ -156,11 +180,51 @@
                     <navigationItem key="navigationItem" id="vSy-tx-Vsn"/>
                     <connections>
                         <outlet property="tableView" destination="V5X-wj-MzB" id="ctn-W1-oRa"/>
+                        <segue destination="4E3-eP-Odn" kind="show" identifier="Show About" id="fJ5-z3-1MT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rxk-UN-P1g">
+            <objects>
+                <viewController id="4E3-eP-Odn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lfV-Hb-5Oe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g81-Bv-YoT">
+                                <rect key="frame" x="20" y="120" width="374" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enumerated Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4G-Dc-wbo">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="31.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An elegant way to layout a table using Swift enum." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ldc-TC-9TW">
+                                        <rect key="frame" x="0.0" y="39.5" width="292.5" height="42.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g81-Bv-YoT" firstAttribute="top" secondItem="UQN-VM-44u" secondAttribute="top" constant="32" id="300-fT-FFO"/>
+                            <constraint firstItem="UQN-VM-44u" firstAttribute="trailing" secondItem="g81-Bv-YoT" secondAttribute="trailing" constant="20" id="7jp-VW-Mz3"/>
+                            <constraint firstItem="g81-Bv-YoT" firstAttribute="leading" secondItem="UQN-VM-44u" secondAttribute="leading" constant="20" id="P8S-aU-0Jd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UQN-VM-44u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzD-s9-PH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ji9-fD-HXb">

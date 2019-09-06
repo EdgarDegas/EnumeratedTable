@@ -7,24 +7,15 @@
 //
 
 import EnumeratedTable
+import SafariServices
 
-// MARK: Enumerated
+// MARK: - Enumerations
 extension ViewController: TableEnumerated {
+    
     enum Section: Int, SectionEnumeration {
         case user
         case plain
         case setting
-        
-        var RowsInSection: RowEnumerated.Type {
-            switch self {
-            case .user:
-                return UserRow.self
-            case .plain:
-                return SelectableRow.self
-            case .setting:
-                return RichTextRow.self
-            }
-        }
         
         var titleForHeader: String? {
             switch self {
@@ -38,19 +29,11 @@ extension ViewController: TableEnumerated {
         }
     }
     
+    
     enum UserRow: Int, RowEnumeration {
         case avatar
         case biography
-        
-        var reuseIdentifier: String? {
-            switch self {
-            case .avatar:
-                return "Avatar Cell"
-            case .biography:
-                return "Cell"
-            }
-        }
-        
+
         var text: String? {
             switch self {
             case .avatar:
@@ -66,14 +49,11 @@ extension ViewController: TableEnumerated {
         }
     }
     
+    
     enum SelectableRow: Int, RowEnumeration {
         case about
         case githubRepo
-        
-        var reuseIdentifier: String? {
-            return "Cell"
-        }
-        
+
         var text: String? {
             switch self {
             case .about:
@@ -86,7 +66,19 @@ extension ViewController: TableEnumerated {
         var height: CGFloat? {
             return 56
         }
+        
+        func handleSelection(by viewController: UIViewController) {
+            switch self {
+            case .about:
+                viewController.performSegue(withIdentifier: "Show About", sender: nil)
+            case .githubRepo:
+                let url = URL(string: "https://github.com/EdgarDegas/EnumeratedTable")!
+                let safariViewController = SFSafariViewController(url: url)
+                viewController.present(safariViewController, animated: true)
+            }
+        }
     }
+    
     
     enum RichTextRow: Int, RowEnumeration {
         case row1
@@ -99,10 +91,6 @@ extension ViewController: TableEnumerated {
             case .row2:
                 return "Ut enim ad minim veniam."
             }
-        }
-        
-        var reuseIdentifier: String? {
-            return "Rich Cell"
         }
         
         var headline: String {
@@ -125,6 +113,48 @@ extension ViewController: TableEnumerated {
     }
 }
 
+
+// MARK: - Route sections to rows
+extension ViewController.Section {
+    var RowsInSection: RowEnumerated.Type {
+        switch self {
+        case .user:
+            return ViewController.UserRow.self
+        case .plain:
+            return ViewController.SelectableRow.self
+        case .setting:
+            return ViewController.RichTextRow.self
+        }
+    }
+}
+
+
+// MARK: - Reuse Identifiers
+extension ViewController.UserRow {
+    var reuseIdentifier: String? {
+        switch self {
+        case .avatar:
+            return "Avatar Cell"
+        case .biography:
+            return "Cell"
+        }
+    }
+}
+
+extension ViewController.SelectableRow {
+    var reuseIdentifier: String? {
+        return "Selectable Cell"
+    }
+}
+
+extension ViewController.RichTextRow {
+    var reuseIdentifier: String? {
+        return "Rich Cell"
+    }
+}
+
+
+// MARK: - Conform cells to Enumerable
 extension RichTextTableViewCell: Enumerable {
     func configure(using enumerated: RowEnumerated) {
         let enumerated = enumerated as! ViewController.RichTextRow

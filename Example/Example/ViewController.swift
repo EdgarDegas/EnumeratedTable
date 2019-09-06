@@ -11,6 +11,11 @@ import EnumeratedTable
 
 final class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        clearSelection()
+    }
 }
 
 
@@ -38,5 +43,19 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return enumeratedRow(at: indexPath)?.height ?? UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        handleSelection(at: indexPath, by: self)
+    }
+}
+
+
+// MARK: - Helpers
+private extension ViewController {
+    func clearSelection() {
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: true)
+        }
     }
 }
