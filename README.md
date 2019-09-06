@@ -129,7 +129,7 @@ extension ViewController: UITableViewDataSource {
 }
 ```
 
-### Make use of RowEnumeration:
+### Make use of RowEnumeration
 
 #### 1. Besides from text, you can also provide rowHeight in your row enumeration:
 
@@ -161,7 +161,7 @@ extension ViewController: UITableViewDataSource {
     }
 ```
 
-### Make Use of Enum
+### Benefit from Enum
 
 As default, you can provide text, detail (fits in the detail label of a UITableViewCell instance) and height.
 
@@ -229,7 +229,7 @@ extension AvatarTableViewCell: Enumerable {
 }
 ```
 
-### Handle selection:
+### Handle selection
 
 #### 1. Implement the `handleSelection` method in your row enumeration:
 
