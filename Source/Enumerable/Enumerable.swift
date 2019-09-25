@@ -15,11 +15,11 @@ public protocol Enumerable {
     ///
     /// The default implementation configures a table view cell by fit text
     /// inside textLabel and detail inside detailLabel.
-    func configure(using enumerated: RowEnumerated)
+    func configure(using enumerated: EnumeratedRow)
 }
 
 public extension Enumerable where Self: UITableViewCell {
-    func configure(using enumerated: RowEnumerated) {
+    func configure(using enumerated: EnumeratedRow) {
         textLabel?.text = enumerated.text
         detailTextLabel?.text = enumerated.detail
     }

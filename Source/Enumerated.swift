@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// The base protocol of RowEnumerated and SectionEnumerated.
+/// The base protocol of EnumeratedRow and EnumeratedSection.
 public protocol Enumerated {
     
     /// Same as `allCases`.
