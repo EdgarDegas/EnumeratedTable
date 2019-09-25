@@ -11,6 +11,9 @@ import Foundation
 /// The base protocol of EnumeratedRow and EnumeratedSection.
 public protocol Enumerated {
     
+    
+    var Enumeration: Enumerated.Type { get }
+    
     /// Same as `allCases`.
     static var cases: [Enumerated] { get }
     
@@ -18,9 +21,19 @@ public protocol Enumerated {
     ///
     /// Same as `init?(rawValue: Int)`.
     init?(index: Int)
+    
+    /// The rawValue of the enumeration case, which must belong to an Int enumeration.
+    var rawValue: Int { get }
+}
+
+public extension Enumerated {
+    var Enumeration: Enumerated.Type {
+        return Self.self
+    }
 }
 
 public extension Enumerated where Self: CaseIterable {
+    
     static var cases: [Enumerated] {
         return Self.allCases as! [Enumerated]
     }
