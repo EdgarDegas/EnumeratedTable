@@ -16,7 +16,7 @@ import Foundation
 ///     // ...
 /// }
 /// ```
-public protocol RowEnumeration: EnumeratedRow, CaseIterable { }
+public protocol RowEnumeration: EnumeratedRow, CaseIterable, Equatable { }
 
 /// Use this protocol to enumerate sections in a table.
 ///
@@ -26,4 +26,4 @@ public protocol RowEnumeration: EnumeratedRow, CaseIterable { }
 ///     // ...
 /// }
 /// ```
-public protocol SectionEnumeration: EnumeratedSection, CaseIterable { }
+public protocol SectionEnumeration: EnumeratedSection, CaseIterable, Equatable { }
