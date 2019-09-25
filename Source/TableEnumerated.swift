@@ -32,6 +32,9 @@ public protocol TableEnumerated {
     /// - Parameter section: Index of the section.
     func enumeratedSection(at section: Int) -> EnumeratedSection?
     
+    /// Returns the index path of an enumerated row.
+    func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath
+    
     /// Returns the enumeration of the row.
     /// - Parameter indexPath: Index path of the row.
     func enumeratedRow(at indexPath: IndexPath) -> EnumeratedRow?
@@ -94,6 +97,14 @@ public extension TableEnumerated {
         let rows = Row.cases
         guard indexPath.row >= 0 && indexPath.row < rows.count else { return nil }
         return rows[indexPath.row] as? EnumeratedRow
+    }
+    
+    func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath {
+        let condition: ((Section) -> Bool) = { $0.RowsInSection == row.Enumeration }
+        guard let section = Section.allCases.first(where: condition) else {
+            fatalError("The row \"\(row)\" is not enumerated at all in table \(self).")
+        }
+        return .init(row: row.rawValue, section: section.rawValue)
     }
     
     func dequeueEnumerableCell(
