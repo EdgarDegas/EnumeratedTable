@@ -4,14 +4,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "ResponsiveButton",
+    name: "EnumeratedTable",
     platforms: [ .iOS(.v9) ],
-    swiftLanguageVersions: [ .v5 ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "EnumeratedTable",
-            targets: ["EnumeratedTable"]),
+            targets: ["EnumeratedTable"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -22,9 +22,14 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "EnumeratedTable",
-            dependencies: []),
+            dependencies: [],
+            path: "Source"
+        ),
         .testTarget(
             name: "EnumeratedTableTests",
-            dependencies: ["EnumeratedTable"]),
-    ]
+            dependencies: ["EnumeratedTable"],
+            path: "EnumeratedTableTests"
+        ),
+    ],
+    swiftLanguageVersions: [ .v5 ]
 )
