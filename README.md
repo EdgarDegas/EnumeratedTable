@@ -27,10 +27,21 @@ Chaos in your setting view controller code? Try enum.
 ## Getting Started
 ### Prerequisites
 
+#### Cocoapods
+
 Install cocoapods if you have not. Then add this line to your podfile:
 ```
 pod 'EnumeratedTable', '~> 0.0.4'
 ```
+
+#### Swift Package Manager
+
+First make sure you are using Xcode 11.0 or later. 
+
+Then, go to File -> Swift Packages -> Add Package Dependency...
+
+![Search for EnumeratedTable](https://user-images.githubusercontent.com/12840982/65615869-a250f000-dfec-11e9-8529-57d3fbec4cd5.png)
+
 
 ### Quick Tutorial
 
