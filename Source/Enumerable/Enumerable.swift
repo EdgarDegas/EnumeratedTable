@@ -6,7 +6,7 @@
 //  Copyright © 2019 imoe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Any cell or reusable view that use the enumerated case to configure its
 /// subviews.

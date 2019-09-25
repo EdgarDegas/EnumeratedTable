@@ -6,7 +6,7 @@
 //  Copyright © 2019 imoe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Describe a row of the table.
 public protocol RowEnumerated: Enumerated {
