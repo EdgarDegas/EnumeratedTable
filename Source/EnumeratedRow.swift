@@ -1,5 +1,5 @@
 //
-//  RowEnumerated.swift
+//  EnumeratedRow.swift
 //  EnumeratedTable
 //
 //  Created by iMoe on 2019/9/6.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// Describe a row of the table.
-public protocol RowEnumerated: Enumerated {
+public protocol EnumeratedRow: Enumerated {
     
     /// The reuse identifier
     var reuseIdentifier: String? { get }
@@ -25,6 +25,7 @@ public protocol RowEnumerated: Enumerated {
     
     @available(*, deprecated,
     message: "Deprecated in 0.0.4. Cells should be configured by Enumerable.")
+    /// Deprecated in 0.0.4. Cells should be configured by Enumerable.
     func configureEnumerableCell(_ cell: Enumerable)
     
     /// Describe how the table should behave when cell is selected. Defaults to doing
@@ -32,7 +33,7 @@ public protocol RowEnumerated: Enumerated {
     func handleSelection(by viewController: UIViewController)
 }
 
-public extension RowEnumerated {
+public extension EnumeratedRow {
 
     var text: String? { return nil }
     
@@ -48,3 +49,10 @@ public extension RowEnumerated {
         
     }
 }
+
+
+@available(*, deprecated,
+message: "Deprecated in 0.0.6. Use EnumeratedRow instead.")
+/// Deprecated in 0.0.6. Use EnumeratedRow instead. Or use RowEnumeration if
+/// you want to enumerate your rows in one section.
+public typealias RowEnumerated = EnumeratedRow
