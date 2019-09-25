@@ -6,7 +6,7 @@
 //  Copyright © 2019 imoe. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Conform your controller or view model to enumerate your table view.
 ///

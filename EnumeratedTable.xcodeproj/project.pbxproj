@@ -44,6 +44,7 @@
 		B32BFCA823224CC600A2143F /* SectionEnumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnumerated.swift; sourceTree = "<group>"; };
 		B337903D23224537007ADA8B /* EnumerableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerableTableViewCell.swift; sourceTree = "<group>"; };
 		B3881942233B8B3800F37B10 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		B388194A233BBBAC00F37B10 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		B315D5D4231FEA91009EA653 = {
 			isa = PBXGroup;
 			children = (
+				B388194A233BBBAC00F37B10 /* README.md */,
 				B3881942233B8B3800F37B10 /* Package.swift */,
 				B315D627231FF4DC009EA653 /* Source */,
 				B315D5E0231FEA91009EA653 /* EnumeratedTable */,

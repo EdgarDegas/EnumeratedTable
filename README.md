@@ -1,6 +1,7 @@
 # EnumeratedTable
 
 [![Build Status](https://travis-ci.com/EdgarDegas/EnumeratedTable.svg?branch=master)](https://travis-ci.com/EdgarDegas/EnumeratedTable)
+![Swift Version](https://img.shields.io/badge/Swift-5.1-orange?color=ffac45)
 
 An elegant way to layout a static table using Swift enum.
 
