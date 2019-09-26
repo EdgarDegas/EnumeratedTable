@@ -31,7 +31,7 @@ Chaos in your setting view controller code? Try enum.
 
 Install cocoapods if you have not. Then add this line to your podfile:
 ```
-pod 'EnumeratedTable', '~> 0.0.4'
+pod 'EnumeratedTable', '~> 0.0.6'
 ```
 
 #### Swift Package Manager

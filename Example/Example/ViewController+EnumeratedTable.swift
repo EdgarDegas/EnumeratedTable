@@ -116,7 +116,7 @@ extension ViewController: TableEnumerated {
 
 // MARK: - Route sections to rows
 extension ViewController.Section {
-    var RowsInSection: RowEnumerated.Type {
+    var RowsInSection: EnumeratedRow.Type {
         switch self {
         case .user:
             return ViewController.UserRow.self
@@ -156,7 +156,7 @@ extension ViewController.RichTextRow {
 
 // MARK: - Conform cells to Enumerable
 extension RichTextTableViewCell: Enumerable {
-    func configure(using enumerated: RowEnumerated) {
+    func configure(using enumerated: EnumeratedRow) {
         let enumerated = enumerated as! ViewController.RichTextRow
         headlineLabel.text = enumerated.headline
         subheadLabel.text = enumerated.subhead
@@ -165,7 +165,7 @@ extension RichTextTableViewCell: Enumerable {
 }
 
 extension AvatarTableViewCell: Enumerable {
-    func configure(using enumerated: RowEnumerated) {
+    func configure(using enumerated: EnumeratedRow) {
         let enumerated = enumerated as! ViewController.UserRow
         nameLabel.text = enumerated.text
         avatarImageView.image = enumerated.image
