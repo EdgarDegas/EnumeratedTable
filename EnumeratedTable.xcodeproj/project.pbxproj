@@ -14,6 +14,7 @@
 		B315D64A232002F6009EA653 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D649232002F6009EA653 /* Enumeration.swift */; };
 		B315D65323200830009EA653 /* Enumerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D65223200830009EA653 /* Enumerable.swift */; };
 		B315D6552320A560009EA653 /* TableEnumerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D6542320A560009EA653 /* TableEnumerated.swift */; };
+		B3288167233CFF4500873280 /* EnumeratedTable.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B3288166233CFF4500873280 /* EnumeratedTable.podspec */; };
 		B32BFCA723224CAA00A2143F /* EnumeratedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BFCA623224CAA00A2143F /* EnumeratedRow.swift */; };
 		B32BFCA923224CC600A2143F /* EnumeratedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BFCA823224CC600A2143F /* EnumeratedSection.swift */; };
 		B337903E23224537007ADA8B /* EnumerableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337903D23224537007ADA8B /* EnumerableTableViewCell.swift */; };
@@ -40,6 +41,7 @@
 		B315D649232002F6009EA653 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
 		B315D65223200830009EA653 /* Enumerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerable.swift; sourceTree = "<group>"; };
 		B315D6542320A560009EA653 /* TableEnumerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEnumerated.swift; sourceTree = "<group>"; };
+		B3288166233CFF4500873280 /* EnumeratedTable.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EnumeratedTable.podspec; sourceTree = "<group>"; };
 		B32BFCA623224CAA00A2143F /* EnumeratedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumeratedRow.swift; sourceTree = "<group>"; };
 		B32BFCA823224CC600A2143F /* EnumeratedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumeratedSection.swift; sourceTree = "<group>"; };
 		B337903D23224537007ADA8B /* EnumerableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerableTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		B315D5D4231FEA91009EA653 = {
 			isa = PBXGroup;
 			children = (
+				B3288166233CFF4500873280 /* EnumeratedTable.podspec */,
 				B388194A233BBBAC00F37B10 /* README.md */,
 				B3881942233B8B3800F37B10 /* Package.swift */,
 				B315D627231FF4DC009EA653 /* Source */,
@@ -219,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3288167233CFF4500873280 /* EnumeratedTable.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +397,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.0.6;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GVYB79VSRG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -405,6 +410,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoe.EnumeratedTable;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -420,6 +426,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.0.6;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = GVYB79VSRG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -432,6 +439,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imoe.EnumeratedTable;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
