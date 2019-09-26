@@ -39,6 +39,12 @@ public protocol TableEnumerated {
     /// - Parameter indexPath: Index path of the row.
     func enumeratedRow(at indexPath: IndexPath) -> EnumeratedRow?
     
+    /// Register reusable cells according to your row enumeration(s).
+    ///
+    /// This method functions only if you have provided both `reuseIdentifier`
+    /// and cell info (`CellType` or nib) for each of your enumerated rows.
+    func registerEnumeratedCells(inside tableView: UITableView)
+    
     @available(*, deprecated,
         message: "Deprecated in 0.0.4. Replace with enumeratedCell(at:inside:) -> UITableViewCell.")
     func dequeueEnumerableCell(
@@ -99,6 +105,12 @@ public extension TableEnumerated {
         return rows[indexPath.row] as? EnumeratedRow
     }
     
+    func registerEnumeratedCells(inside tableView: UITableView) {
+        Section.allCases.forEach {
+            registerCellsInSection($0, inside: tableView)
+        }
+    }
+    
     func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath {
         let condition: ((Section) -> Bool) = { $0.RowsInSection == row.Enumeration }
         guard let section = Section.allCases.first(where: condition) else {
@@ -137,5 +149,21 @@ public extension TableEnumerated {
                          by viewController: UIViewController) {
         guard let row = enumeratedRow(at: indexPath) else { return }
         row.handleSelection(by: viewController)
+    }
+}
+
+
+private extension TableEnumerated {
+    func registerCellsInSection(_ section: EnumeratedSection, inside tableView: UITableView) {
+        let RowEnumeration = section.RowsInSection.self
+        RowEnumeration.cases.forEach {
+            guard let enumeratedRow = $0 as? EnumeratedRow else { return }
+            guard let reuseIdentifier = enumeratedRow.reuseIdentifier else { return }
+            if let nib = enumeratedRow.nib {
+                tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
+            } else if let CellType = enumeratedRow.CellType {
+                tableView.register(CellType, forCellReuseIdentifier: reuseIdentifier)
+            }
+        }
     }
 }

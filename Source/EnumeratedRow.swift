@@ -11,6 +11,16 @@ import UIKit
 /// Describe a row of the table.
 public protocol EnumeratedRow: Enumerated {
     
+    /// The nib of your custom cell. Defaults to `nil`.
+    ///
+    /// You don't need to provide both nib and CellType. Only one of them is used.
+    var nib: UINib? { get }
+    
+    /// The type of your custom cell. Defaults to `nil`.
+    ///
+    /// You don't need to provide both nib and CellType. Only one of them is used.
+    var CellType: UITableViewCell.Type? { get }
+    
     /// The reuse identifier
     var reuseIdentifier: String? { get }
     
@@ -34,6 +44,14 @@ public protocol EnumeratedRow: Enumerated {
 }
 
 public extension EnumeratedRow {
+    
+    var nib: UINib? {
+        return nil
+    }
+    
+    var CellType: UITableViewCell.Type? {
+        return nil
+    }
 
     var text: String? { return nil }
     
