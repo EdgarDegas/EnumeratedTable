@@ -33,7 +33,7 @@ public protocol TableEnumerated {
     func enumeratedSection(at section: Int) -> EnumeratedSection?
     
     /// Returns the index path of an enumerated row.
-    func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath
+    func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath?
     
     /// Returns the enumeration of the row.
     /// - Parameter indexPath: Index path of the row.
@@ -111,10 +111,10 @@ public extension TableEnumerated {
         }
     }
     
-    func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath {
+    func indexPathOfEnumeratedRow(_ row: EnumeratedRow) -> IndexPath? {
         let condition: ((Section) -> Bool) = { $0.RowsInSection == row.Enumeration }
         guard let section = Section.allCases.first(where: condition) else {
-            fatalError("The row \"\(row)\" is not enumerated at all in table \(self).")
+            return nil
         }
         return .init(row: row.rawValue, section: section.rawValue)
     }
@@ -136,13 +136,13 @@ public extension TableEnumerated {
     ) -> UITableViewCell {
         guard let row = enumeratedRow(at: indexPath),
               let identifier = row.reuseIdentifier,
-              let enumrable = tableView.dequeueReusableCell(
+              let enumerable = tableView.dequeueReusableCell(
                   withIdentifier: identifier, for: indexPath) as? Enumerable
         else {
             return .init()
         }
-        enumrable.configure(using: row)
-        return enumrable as! UITableViewCell
+        enumerable.configure(using: row)
+        return enumerable as! UITableViewCell
     }
     
     func handleSelection(at indexPath: IndexPath,
