@@ -1,5 +1,5 @@
 //
-//  ViewController+EnumeratedTable.swift
+//  StaticTableViewController+EnumeratedTable.swift
 //  Example
 //
 //  Created by iMoe on 2019/9/4.
@@ -10,12 +10,11 @@ import EnumeratedTable
 import SafariServices
 
 // MARK: Enumerations
-extension ViewController: TableEnumerated {
+extension StaticTableViewController: TableEnumerated {
     
     enum Section: Int, SectionEnumeration {
         case user
         case plain
-        case setting
         
         var titleForHeader: String? {
             switch self {
@@ -23,14 +22,12 @@ extension ViewController: TableEnumerated {
                 return nil
             case .plain:
                 return "Selectable Cells"
-            case .setting:
-                return "Rich Text Cells"
             }
         }
     }
     
     
-    enum UserRow: Int, RowEnumeration {
+    enum UserRow: Int, RowEnumeration, EnumerableAsUserRow {
         case avatar
         case biography
 
@@ -78,59 +75,24 @@ extension ViewController: TableEnumerated {
             }
         }
     }
-    
-    
-    enum RichTextRow: Int, RowEnumeration {
-        case row1
-        case row2
-        
-        var text: String? {
-            switch self {
-            case .row1:
-                return "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            case .row2:
-                return "Ut enim ad minim veniam."
-            }
-        }
-        
-        var headline: String {
-            switch self {
-            case .row1:
-                return "Row 1"
-            case .row2:
-                return "Row 2"
-            }
-        }
-        
-        var subhead: String {
-            switch self {
-            case .row1:
-                return "Subhead 1"
-            case .row2:
-                return "Subhead 2"
-            }
-        }
-    }
 }
 
 
 // MARK: - Route sections to rows
-extension ViewController.Section {
+extension StaticTableViewController.Section {
     var RowsInSection: EnumeratedRow.Type {
         switch self {
         case .user:
-            return ViewController.UserRow.self
+            return StaticTableViewController.UserRow.self
         case .plain:
-            return ViewController.SelectableRow.self
-        case .setting:
-            return ViewController.RichTextRow.self
+            return StaticTableViewController.SelectableRow.self
         }
     }
 }
 
 
 // MARK: - Reuse Identifiers
-extension ViewController.UserRow {
+extension StaticTableViewController.UserRow {
     var reuseIdentifier: String? {
         switch self {
         case .avatar:
@@ -141,33 +103,8 @@ extension ViewController.UserRow {
     }
 }
 
-extension ViewController.SelectableRow {
+extension StaticTableViewController.SelectableRow {
     var reuseIdentifier: String? {
         return "Selectable Cell"
-    }
-}
-
-extension ViewController.RichTextRow {
-    var reuseIdentifier: String? {
-        return "Rich Cell"
-    }
-}
-
-
-// MARK: - Conform cells to Enumerable
-extension RichTextTableViewCell: Enumerable {
-    func configure(using enumerated: EnumeratedRow) {
-        let enumerated = enumerated as! ViewController.RichTextRow
-        headlineLabel.text = enumerated.headline
-        subheadLabel.text = enumerated.subhead
-        bodyLabel.text = enumerated.text
-    }
-}
-
-extension AvatarTableViewCell: Enumerable {
-    func configure(using enumerated: EnumeratedRow) {
-        let enumerated = enumerated as! ViewController.UserRow
-        nameLabel.text = enumerated.text
-        avatarImageView.image = enumerated.image
     }
 }
