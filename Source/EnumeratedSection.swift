@@ -27,9 +27,3 @@ public extension EnumeratedSection {
     
     var titleForFooter: String? { return nil }
 }
-
-@available(*, deprecated,
-message: "Deprecated in 0.0.6. Use EnumeratedSection instead.")
-/// Deprecated in 0.0.6. Use EnumeratedSection instead. Or use SectionEnumeration if
-/// you want to enumerate your sections in your table.
-public typealias SectionEnumerated = EnumeratedSection

@@ -33,11 +33,6 @@ public protocol EnumeratedRow: Enumerated {
     /// The height of the row, or nil to auto layout the cell.
     var height: CGFloat? { get }
     
-    @available(*, deprecated,
-    message: "Deprecated in 0.0.4. Cells should be configured by Enumerable.")
-    /// Deprecated in 0.0.4. Cells should be configured by Enumerable.
-    func configureEnumerableCell(_ cell: Enumerable)
-    
     /// Describe how the table should behave when cell is selected. Defaults to doing
     /// nothing at all.
     func handleSelection(by viewController: UIViewController)
@@ -59,18 +54,7 @@ public extension EnumeratedRow {
     
     var height: CGFloat? { return nil }
     
-    func configureEnumerableCell(_ cell: Enumerable) {
-        cell.configure(using: self)
-    }
-    
     func handleSelection(by viewController: UIViewController) {
         
     }
 }
-
-
-@available(*, deprecated,
-message: "Deprecated in 0.0.6. Use EnumeratedRow instead.")
-/// Deprecated in 0.0.6. Use EnumeratedRow instead. Or use RowEnumeration if
-/// you want to enumerate your rows in one section.
-public typealias RowEnumerated = EnumeratedRow
