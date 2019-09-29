@@ -45,14 +45,6 @@ public protocol TableEnumerated {
     /// and cell info (`CellType` or nib) for each of your enumerated rows.
     func registerEnumeratedCells(inside tableView: UITableView)
     
-    @available(*, deprecated,
-        message: "Deprecated in 0.0.4. Replace with enumeratedCell(at:inside:) -> UITableViewCell.")
-    func dequeueEnumerableCell(
-        for row: EnumeratedRow,
-        at indexPath: IndexPath,
-        inside tableView: UITableView
-    ) -> Enumerable?
-    
     /// Returns the dequeued and configured reusable cell.
     ///
     /// This method dequeues the cell from the table view using the reusable identifier
@@ -117,17 +109,6 @@ public extension TableEnumerated {
             return nil
         }
         return .init(row: row.rawValue, section: section.rawValue)
-    }
-    
-    func dequeueEnumerableCell(
-        for row: EnumeratedRow,
-        at indexPath: IndexPath,
-        inside tableView: UITableView
-    ) -> Enumerable? {
-        guard let reuseIdentifier = row.reuseIdentifier else { return nil }
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: reuseIdentifier, for: indexPath)
-        return cell as? Enumerable
     }
     
     func enumeratedCell(
