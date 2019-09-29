@@ -24,6 +24,9 @@
 		B3C1125C2340578B00CD2C52 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1125B2340578B00CD2C52 /* RecordViewModel.swift */; };
 		B3C1125F2340582200CD2C52 /* RichTextStyle2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1125D2340582200CD2C52 /* RichTextStyle2TableViewCell.swift */; };
 		B3C112602340582200CD2C52 /* RichTextStyle2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C1125E2340582200CD2C52 /* RichTextStyle2TableViewCell.xib */; };
+		B3C112622340785E00CD2C52 /* RichTextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C112612340785E00CD2C52 /* RichTextRow.swift */; };
+		B3C112652340801200CD2C52 /* DynamicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C112642340789C00CD2C52 /* DynamicTableViewController.swift */; };
+		B3C112662340801500CD2C52 /* DynamicTableViewController+EnumeratedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C112632340789C00CD2C52 /* DynamicTableViewController+EnumeratedTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		B3C1125B2340578B00CD2C52 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		B3C1125D2340582200CD2C52 /* RichTextStyle2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextStyle2TableViewCell.swift; sourceTree = "<group>"; };
 		B3C1125E2340582200CD2C52 /* RichTextStyle2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RichTextStyle2TableViewCell.xib; sourceTree = "<group>"; };
+		B3C112612340785E00CD2C52 /* RichTextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextRow.swift; sourceTree = "<group>"; };
+		B3C112632340789C00CD2C52 /* DynamicTableViewController+EnumeratedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DynamicTableViewController+EnumeratedTable.swift"; sourceTree = "<group>"; };
+		B3C112642340789C00CD2C52 /* DynamicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 				B3288172233D203900873280 /* Record.swift */,
 				B3C1125B2340578B00CD2C52 /* RecordViewModel.swift */,
 				B3C11257233F5D8200CD2C52 /* EnumerableAsUserRow.swift */,
+				B3C112612340785E00CD2C52 /* RichTextRow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 		B3C1124E233F10BA00CD2C52 /* Dynamic */ = {
 			isa = PBXGroup;
 			children = (
+				B3C112642340789C00CD2C52 /* DynamicTableViewController.swift */,
+				B3C112632340789C00CD2C52 /* DynamicTableViewController+EnumeratedTable.swift */,
 			);
 			path = Dynamic;
 			sourceTree = "<group>";
@@ -247,7 +256,10 @@
 			files = (
 				B337903C2321FF40007ADA8B /* RichTextStyle1TableViewCell.swift in Sources */,
 				B3C11256233F150D00CD2C52 /* HalfStaticTableViewController+EnumeratedTable.swift in Sources */,
+				B3C112662340801500CD2C52 /* DynamicTableViewController+EnumeratedTable.swift in Sources */,
+				B3C112622340785E00CD2C52 /* RichTextRow.swift in Sources */,
 				B315D637231FF53C009EA653 /* StaticTableViewController.swift in Sources */,
+				B3C112652340801200CD2C52 /* DynamicTableViewController.swift in Sources */,
 				B3288173233D203900873280 /* Record.swift in Sources */,
 				B315D64E2320067C009EA653 /* StaticTableViewController+EnumeratedTable.swift in Sources */,
 				B3C11254233F13B900CD2C52 /* AvatarTableViewCell+Enumerable.swift in Sources */,

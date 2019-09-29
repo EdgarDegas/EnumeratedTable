@@ -1,5 +1,5 @@
 //
-//  HalfStaticTableViewController.swift
+//  DynamicTableViewController.swift
 //  Example
 //
 //  Created by iMoe on 2019/9/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HalfStaticTableViewController: UIViewController {
+final class DynamicTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var records = [RecordViewModel]()
@@ -27,79 +27,41 @@ final class HalfStaticTableViewController: UIViewController {
 
 
 // MARK: Table View Data Source
-extension HalfStaticTableViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return numberOfEnumeratedSections
-    }
-    
+extension DynamicTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let enumeratedSection = enumeratedSection(at: section) as? Section else { return 0 }
-        switch enumeratedSection {
-        case .richText:
-            return records.count
-        default:
-            return numberOfEnumeratedRows(in: section)
-        }
+        return records.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let enumeratedSection = enumeratedSection(
-            at: indexPath.section) as? Section
-        else {
-            return .init()
-        }
-        switch enumeratedSection {
-        case .richText:
-            let record = records[indexPath.row]
-            let enumeratedRow = enumeratedRowForRecordStyle(record.style)
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: enumeratedRow.reuseIdentifier!, for: indexPath)
-            configureCell(cell, asRow: enumeratedRow, with: record.record)
-            return cell
-        default:
-            return enumeratedCell(at: indexPath, inside: tableView)
-        }
+        let record = records[indexPath.row]
+        let enumeratedRow = enumeratedRowForRecordStyle(record.style)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: enumeratedRow.reuseIdentifier!, for: indexPath)
+        configureCell(cell, asRow: enumeratedRow, with: record.record)
+        return cell
     }
 }
 
 
 // MARK: Table View Delegate
-extension HalfStaticTableViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return enumeratedSection(at: section)?.titleForHeader
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return enumeratedRow(at: indexPath)?.height ?? UITableView.automaticDimension
-    }
-    
+extension DynamicTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = enumeratedSection(
-            at: indexPath.section) as? Section
-        else {
-            return
+        let record = records[indexPath.row].record
+        let alertController = UIAlertController(
+            title: record.title,
+            message: record.subtitle,
+            preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { (_) in
+            self.clearSelection()
         }
-        switch section {
-        case .richText:
-            let record = records[indexPath.row].record
-            let alertController = UIAlertController(
-                title: record.title,
-                message: record.subtitle,
-                preferredStyle: .actionSheet)
-            let okAction = UIAlertAction(title: "OK", style: .cancel) { (_) in
-                self.clearSelection()
-            }
-            alertController.addAction(okAction)
-            present(alertController, animated: true)
-        default:
-            handleSelection(at: indexPath, by: self)
-        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
     }
 }
 
 
 // MARK: - Helpers
-private extension HalfStaticTableViewController {
+private extension DynamicTableViewController {
     // MARK: Cell Configurations. You can move these methods to your VM
     func enumeratedRowForRecordStyle(_ style: RecordViewModel.Style) -> RichTextRow {
         var enumeratedRow: RichTextRow

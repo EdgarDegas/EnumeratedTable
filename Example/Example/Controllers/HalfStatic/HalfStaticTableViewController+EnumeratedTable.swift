@@ -78,12 +78,7 @@ extension HalfStaticTableViewController: TableEnumerated {
             }
         }
     }
-    
-    
-    enum RichTextRow: Int, RowEnumeration {
-        case style1
-        case style2
-    }
+
 }
 
 
@@ -96,7 +91,7 @@ extension HalfStaticTableViewController.Section {
         case .plain:
             return HalfStaticTableViewController.SelectableRow.self
         case .richText:
-            return HalfStaticTableViewController.RichTextRow.self
+            return RichTextRow.self
         }
     }
 }
@@ -117,25 +112,5 @@ extension HalfStaticTableViewController.UserRow {
 extension HalfStaticTableViewController.SelectableRow {
     var reuseIdentifier: String? {
         return "Selectable Cell"
-    }
-}
-
-extension HalfStaticTableViewController.RichTextRow {
-    var nib: UINib? {
-        switch self {
-        case .style1:
-            return nil
-        case .style2:
-            return .init(nibName: "RichTextStyle2TableViewCell", bundle: nil)
-        }
-    }
-    
-    var reuseIdentifier: String? {
-        switch self {
-        case .style1:
-            return "RichTextStyle1TableViewCell"
-        case .style2:
-            return "RichTextStyle2TableViewCell"
-        }
     }
 }
