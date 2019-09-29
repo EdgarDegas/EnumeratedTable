@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StaticTableViewController.swift
 //  Example
 //
 //  Created by iMoe on 2019/9/4.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class StaticTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    var records = Record.samples
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -19,7 +21,7 @@ final class ViewController: UIViewController {
 
 
 // MARK: Table View Data Source
-extension ViewController: UITableViewDataSource {
+extension StaticTableViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfEnumeratedSections
     }
@@ -35,7 +37,7 @@ extension ViewController: UITableViewDataSource {
 
 
 // MARK: Table View Delegate
-extension ViewController: UITableViewDelegate {
+extension StaticTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return enumeratedSection(at: section)?.titleForHeader
     }
@@ -51,7 +53,7 @@ extension ViewController: UITableViewDelegate {
 
 
 // MARK: - Helpers
-private extension ViewController {
+private extension StaticTableViewController {
     func clearSelection() {
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedIndexPath, animated: true)

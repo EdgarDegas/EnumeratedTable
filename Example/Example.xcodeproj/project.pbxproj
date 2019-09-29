@@ -8,28 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		B315D635231FF53C009EA653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D634231FF53C009EA653 /* AppDelegate.swift */; };
-		B315D637231FF53C009EA653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D636231FF53C009EA653 /* ViewController.swift */; };
+		B315D637231FF53C009EA653 /* StaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D636231FF53C009EA653 /* StaticTableViewController.swift */; };
 		B315D63A231FF53C009EA653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B315D638231FF53C009EA653 /* Main.storyboard */; };
 		B315D63C231FF53D009EA653 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B315D63B231FF53D009EA653 /* Assets.xcassets */; };
 		B315D63F231FF53D009EA653 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B315D63D231FF53D009EA653 /* LaunchScreen.storyboard */; };
 		B315D648231FF552009EA653 /* EnumeratedTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B315D647231FF552009EA653 /* EnumeratedTable.framework */; };
-		B315D64E2320067C009EA653 /* ViewController+EnumeratedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D64D2320067C009EA653 /* ViewController+EnumeratedTable.swift */; };
-		B337903C2321FF40007ADA8B /* RichTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337903B2321FF40007ADA8B /* RichTextTableViewCell.swift */; };
+		B315D64E2320067C009EA653 /* StaticTableViewController+EnumeratedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B315D64D2320067C009EA653 /* StaticTableViewController+EnumeratedTable.swift */; };
+		B3288173233D203900873280 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3288172233D203900873280 /* Record.swift */; };
+		B337903C2321FF40007ADA8B /* RichTextStyle1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337903B2321FF40007ADA8B /* RichTextStyle1TableViewCell.swift */; };
 		B3379040232246F4007ADA8B /* AvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337903F232246F4007ADA8B /* AvatarTableViewCell.swift */; };
+		B3C11254233F13B900CD2C52 /* AvatarTableViewCell+Enumerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C11253233F13B900CD2C52 /* AvatarTableViewCell+Enumerable.swift */; };
+		B3C11255233F150B00CD2C52 /* HalfStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1124F233F134000CD2C52 /* HalfStaticTableViewController.swift */; };
+		B3C11256233F150D00CD2C52 /* HalfStaticTableViewController+EnumeratedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C11250233F134000CD2C52 /* HalfStaticTableViewController+EnumeratedTable.swift */; };
+		B3C11258233F5D8200CD2C52 /* EnumerableAsUserRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C11257233F5D8200CD2C52 /* EnumerableAsUserRow.swift */; };
+		B3C1125C2340578B00CD2C52 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1125B2340578B00CD2C52 /* RecordViewModel.swift */; };
+		B3C1125F2340582200CD2C52 /* RichTextStyle2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C1125D2340582200CD2C52 /* RichTextStyle2TableViewCell.swift */; };
+		B3C112602340582200CD2C52 /* RichTextStyle2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C1125E2340582200CD2C52 /* RichTextStyle2TableViewCell.xib */; };
+		B3C112622340785E00CD2C52 /* RichTextRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C112612340785E00CD2C52 /* RichTextRow.swift */; };
+		B3C112652340801200CD2C52 /* DynamicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C112642340789C00CD2C52 /* DynamicTableViewController.swift */; };
+		B3C112662340801500CD2C52 /* DynamicTableViewController+EnumeratedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C112632340789C00CD2C52 /* DynamicTableViewController+EnumeratedTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B315D631231FF53C009EA653 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B315D634231FF53C009EA653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B315D636231FF53C009EA653 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B315D636231FF53C009EA653 /* StaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableViewController.swift; sourceTree = "<group>"; };
 		B315D639231FF53C009EA653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B315D63B231FF53D009EA653 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B315D63E231FF53D009EA653 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B315D640231FF53D009EA653 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B315D647231FF552009EA653 /* EnumeratedTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EnumeratedTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B315D64D2320067C009EA653 /* ViewController+EnumeratedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+EnumeratedTable.swift"; sourceTree = "<group>"; };
-		B337903B2321FF40007ADA8B /* RichTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextTableViewCell.swift; sourceTree = "<group>"; };
+		B315D64D2320067C009EA653 /* StaticTableViewController+EnumeratedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StaticTableViewController+EnumeratedTable.swift"; sourceTree = "<group>"; };
+		B3288172233D203900873280 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		B337903B2321FF40007ADA8B /* RichTextStyle1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextStyle1TableViewCell.swift; sourceTree = "<group>"; };
 		B337903F232246F4007ADA8B /* AvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTableViewCell.swift; sourceTree = "<group>"; };
+		B3C1124F233F134000CD2C52 /* HalfStaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfStaticTableViewController.swift; sourceTree = "<group>"; };
+		B3C11250233F134000CD2C52 /* HalfStaticTableViewController+EnumeratedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HalfStaticTableViewController+EnumeratedTable.swift"; sourceTree = "<group>"; };
+		B3C11253233F13B900CD2C52 /* AvatarTableViewCell+Enumerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvatarTableViewCell+Enumerable.swift"; sourceTree = "<group>"; };
+		B3C11257233F5D8200CD2C52 /* EnumerableAsUserRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerableAsUserRow.swift; sourceTree = "<group>"; };
+		B3C1125B2340578B00CD2C52 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		B3C1125D2340582200CD2C52 /* RichTextStyle2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextStyle2TableViewCell.swift; sourceTree = "<group>"; };
+		B3C1125E2340582200CD2C52 /* RichTextStyle2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RichTextStyle2TableViewCell.xib; sourceTree = "<group>"; };
+		B3C112612340785E00CD2C52 /* RichTextRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextRow.swift; sourceTree = "<group>"; };
+		B3C112632340789C00CD2C52 /* DynamicTableViewController+EnumeratedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DynamicTableViewController+EnumeratedTable.swift"; sourceTree = "<group>"; };
+		B3C112642340789C00CD2C52 /* DynamicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +86,9 @@
 		B315D633231FF53C009EA653 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				B315D636231FF53C009EA653 /* ViewController.swift */,
-				B315D64D2320067C009EA653 /* ViewController+EnumeratedTable.swift */,
-				B32BFCAE2322CBE800A2143F /* Cells */,
-				B315D638231FF53C009EA653 /* Main.storyboard */,
+				B3C1124C233F101300CD2C52 /* Models */,
+				B3C1124B233F100A00CD2C52 /* Controllers */,
+				B3C1124A233F100400CD2C52 /* Views */,
 				B32BFCAF2322CBF700A2143F /* Supporting Files */,
 			);
 			path = Example;
@@ -85,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				B337903F232246F4007ADA8B /* AvatarTableViewCell.swift */,
-				B337903B2321FF40007ADA8B /* RichTextTableViewCell.swift */,
+				B3C11253233F13B900CD2C52 /* AvatarTableViewCell+Enumerable.swift */,
+				B337903B2321FF40007ADA8B /* RichTextStyle1TableViewCell.swift */,
+				B3C1125D2340582200CD2C52 /* RichTextStyle2TableViewCell.swift */,
+				B3C1125E2340582200CD2C52 /* RichTextStyle2TableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -99,6 +123,63 @@
 				B315D640231FF53D009EA653 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3C11249233F0FED00CD2C52 /* HalfStatic */ = {
+			isa = PBXGroup;
+			children = (
+				B3C1124F233F134000CD2C52 /* HalfStaticTableViewController.swift */,
+				B3C11250233F134000CD2C52 /* HalfStaticTableViewController+EnumeratedTable.swift */,
+			);
+			path = HalfStatic;
+			sourceTree = "<group>";
+		};
+		B3C1124A233F100400CD2C52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B32BFCAE2322CBE800A2143F /* Cells */,
+				B315D638231FF53C009EA653 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3C1124B233F100A00CD2C52 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3C1124D233F10B000CD2C52 /* Static */,
+				B3C11249233F0FED00CD2C52 /* HalfStatic */,
+				B3C1124E233F10BA00CD2C52 /* Dynamic */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3C1124C233F101300CD2C52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3288172233D203900873280 /* Record.swift */,
+				B3C1125B2340578B00CD2C52 /* RecordViewModel.swift */,
+				B3C11257233F5D8200CD2C52 /* EnumerableAsUserRow.swift */,
+				B3C112612340785E00CD2C52 /* RichTextRow.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B3C1124D233F10B000CD2C52 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				B315D636231FF53C009EA653 /* StaticTableViewController.swift */,
+				B315D64D2320067C009EA653 /* StaticTableViewController+EnumeratedTable.swift */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		B3C1124E233F10BA00CD2C52 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				B3C112642340789C00CD2C52 /* DynamicTableViewController.swift */,
+				B3C112632340789C00CD2C52 /* DynamicTableViewController+EnumeratedTable.swift */,
+			);
+			path = Dynamic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B315D63F231FF53D009EA653 /* LaunchScreen.storyboard in Resources */,
+				B3C112602340582200CD2C52 /* RichTextStyle2TableViewCell.xib in Resources */,
 				B315D63C231FF53D009EA653 /* Assets.xcassets in Resources */,
 				B315D63A231FF53C009EA653 /* Main.storyboard in Resources */,
 			);
@@ -172,10 +254,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B337903C2321FF40007ADA8B /* RichTextTableViewCell.swift in Sources */,
-				B315D637231FF53C009EA653 /* ViewController.swift in Sources */,
-				B315D64E2320067C009EA653 /* ViewController+EnumeratedTable.swift in Sources */,
+				B337903C2321FF40007ADA8B /* RichTextStyle1TableViewCell.swift in Sources */,
+				B3C11256233F150D00CD2C52 /* HalfStaticTableViewController+EnumeratedTable.swift in Sources */,
+				B3C112662340801500CD2C52 /* DynamicTableViewController+EnumeratedTable.swift in Sources */,
+				B3C112622340785E00CD2C52 /* RichTextRow.swift in Sources */,
+				B315D637231FF53C009EA653 /* StaticTableViewController.swift in Sources */,
+				B3C112652340801200CD2C52 /* DynamicTableViewController.swift in Sources */,
+				B3288173233D203900873280 /* Record.swift in Sources */,
+				B315D64E2320067C009EA653 /* StaticTableViewController+EnumeratedTable.swift in Sources */,
+				B3C11254233F13B900CD2C52 /* AvatarTableViewCell+Enumerable.swift in Sources */,
+				B3C11255233F150B00CD2C52 /* HalfStaticTableViewController.swift in Sources */,
+				B3C1125F2340582200CD2C52 /* RichTextStyle2TableViewCell.swift in Sources */,
+				B3C1125C2340578B00CD2C52 /* RecordViewModel.swift in Sources */,
 				B3379040232246F4007ADA8B /* AvatarTableViewCell.swift in Sources */,
+				B3C11258233F5D8200CD2C52 /* EnumerableAsUserRow.swift in Sources */,
 				B315D635231FF53C009EA653 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
