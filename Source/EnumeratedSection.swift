@@ -8,7 +8,8 @@
 
 import Foundation
 
-/// Describe a section of the table.
+/// Describe a section of the table. Use `SectionEnumeration` instead of directly
+/// using this protocol.
 public protocol EnumeratedSection: Enumerated {
     
     /// The enumerated rows of the section.

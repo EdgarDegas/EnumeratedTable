@@ -8,7 +8,8 @@
 
 import UIKit
 
-/// Describe a row of the table.
+/// Describe a row of the table. Use `RowEnumeration` instead of directly using this
+/// protocol.
 public protocol EnumeratedRow: Enumerated {
     
     /// The nib of your custom cell. Defaults to `nil`.

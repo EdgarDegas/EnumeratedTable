@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// Any cell or reusable view that use the enumerated case to configure its
-/// subviews.
+/// Conform a `UITableViewCell` subclass or any other view, makes it *enumerable*,
+/// so that an enumerated table can reuse it.
 public protocol Enumerable {
     /// Descibes how to use the enumerated case to render the interface.
     ///

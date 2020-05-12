@@ -8,13 +8,9 @@
 
 import UIKit
 
-/// An enumerable UITableViewCell subclass.
+/// An enumerable `UITableViewCell` subclass.
 ///
-/// If you plan to enumerate a table containing only cells with iOS built-in basic
-/// styles, i.e., UITableViewCell itself instead of subclassing. Then replace
-/// UITableViewCell with this class. If you don't want to extend the whole
-/// UITableViewCell to Enumerable.
-///
-/// Elsewise, declare an extension to conform UITableViewCell to Enumerable
-/// so that the cells could be configured with enumerated cases.
+/// If you plan to enumerate a table using the basic `UITableViewCell` type, replace
+/// `UITableViewCell` with this class, so that you don't have to conform
+/// `UITableViewCell` to `Enumerable`.
 open class EnumerableTableViewCell: UITableViewCell, Enumerable { }

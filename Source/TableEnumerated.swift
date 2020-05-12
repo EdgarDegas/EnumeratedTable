@@ -8,17 +8,23 @@
 
 import UIKit
 
-/// Conform your controller or view model to enumerate your table view.
+/// Conform to this protocol to enumerate sections and rows of your table view.
 ///
-/// This protocol asks you to provide a SectionEnumeration type, which should be
-/// declared as an enum, named `Section`. See `SectionEnumeration` for paradigm.
+/// This protocol asks you to provide an associated type `Section` conforming to
+/// `SectionEnumeration`, you can simply define it like this:
+/// ```
+/// enum Section: Int, SectionEnumeration {
+///     // ...
+/// }
+/// ```
+/// See the doc of `SectionEnumeration` for detail.
 ///
 /// The protocol provides several convenience methods. Checkout [the example
 /// project](https://github.com/EdgarDegas/EnumeratedTable/tree/master/Example) for
 /// paradigm.
 public protocol TableEnumerated {
     
-    /// The essential of a table. Enumerates all sections the table has.
+    /// Enumeration of all the sections of this table.
     associatedtype Section: SectionEnumeration where Section: RawRepresentable, Section.RawValue == Int
     
     /// The number of sections enumerated in Section.
